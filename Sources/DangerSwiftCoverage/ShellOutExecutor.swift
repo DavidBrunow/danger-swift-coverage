@@ -19,9 +19,9 @@ struct ShellOutExecutor: ShellOutExecuting {
             try? FileManager.default.removeItem(atPath: file)
         }
 
-        ShellExecutor().execute(command + " &> \(file)", arguments: [])
+        ShellExecutor().execute(command + " > \(file)", arguments: [])
 
-        print(command + " &> \(file)")
+        print(command + " > \(file)")
 
         return try NSData(contentsOfFile: file) as Data
     }
